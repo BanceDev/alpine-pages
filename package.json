@@ -1,15 +1,15 @@
 {
-  "name": "PLUGIN",
+  "name": "alpinejs-pages",
   "version": "1.0.0",
-  "description": "DESCRIPTION",
+  "description": "Alpine.js plugin for cleanly making multiple client side pages with automatic routing",
   "keywords": [
     "Alpine",
     "Alpine JS",
     "Alpine JS Plugin",
     "Alpine JS Plugins"
   ],
-  "module": "dist/FILE.esm.js",
-  "unpkg": "dist/FILE.min.js",
+  "module": "dist/pages.esm.js",
+  "unpkg": "dist/pages.min.js",
   "scripts": {
     "build": "node scripts/build.js"
   },

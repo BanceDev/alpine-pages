@@ -50,9 +50,9 @@ to you.
 
 **--- DELETE END ---**
 
-# PLUGIN
+# Alpine Pages
 
-DESCRIPTION
+Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by creating localized Alpine data for your page and allowing you to use it in more freeform ways while still preserving full reactivity. Alpine Pages also features automatic routing for your pages out of the box with support for both history-based and hash-based routing.
 
 ## Install
 
