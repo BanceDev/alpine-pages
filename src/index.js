@@ -1,4 +1,10 @@
 export default function (Alpine) {
+  let currentPage = window.location.pathname;
+
+  window.addEventListener('popstate', () => {
+    currentPage = window.location.pathname;
+  });
+
   Alpine.page = (name, component) => {
     // Create an alpine data for the local page data
     Alpine.data(name, () => {
@@ -12,8 +18,12 @@ export default function (Alpine) {
       // intercept and modify the init function
       const originalInit = obj.init || function() {};
       obj.init = function() {
-        const htmlContent = obj.page();
-        this.$el.innerHTML = htmlContent;
+        // Setup reactive state for the page
+        Alpine.effect(() => {
+          const htmlContent = obj.page();
+          this.$el.innerHTML = htmlContent;
+        });
+        
         originalInit.call(this);
       }
 
@@ -21,11 +31,18 @@ export default function (Alpine) {
     });
   };
 
+  Alpine.magic('page', () => {
+    return currentPage;
+  });
+
   Alpine.directive('page', (el, { expression }) => {
     el.setAttribute('x-data', expression);
     el.setAttribute('x-show', `$page === ${expression}`);
-    el.setAttribute('x-effect', 'page()');
   });
 
+  Alpine.magic('route', () => path => {
+    currentPage = path;
+    history.pushState(null, null, path);
+  });
 
 }
