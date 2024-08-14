@@ -26,8 +26,8 @@ this file.
 
 ## Things to Change
 
-- Find and replace "PLUGIN" with the name of your plugin
-- Find and replace "FILE" with the name of your compiled file
+- Find and replace "alpinejs-pages" with the name of your plugin
+- Find and replace "pages" with the name of your compiled file
 - Find and replace "DESCRIPTION" with a description of your plugin
 - Uncomment "index.html" in the `.gitignore` file
 
@@ -35,8 +35,8 @@ this file.
 
 If you were creating a plugin called "Alpine JS CSV" you could do the following:
 
-- "PLUGIN" to "alpinejs-csv"
-- "FILE" to "csv"
+- "alpinejs-pages" to "alpinejs-csv"
+- "pages" to "csv"
 - "DESCRIPTION" to "Transform data into a CSV with Alpine JS 📈"
 
 ---
@@ -59,7 +59,7 @@ Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" fo
 ### With a CDN
 
 ```html
-<script defer src="https://unpkg.com/PLUGIN@latest/dist/FILE.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs-pages@latest/dist/pages.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 ```
@@ -67,16 +67,16 @@ Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" fo
 ### With a Package Manager
 
 ```shell
-yarn add -D PLUGIN
+yarn add -D alpinejs-pages
 
-npm install -D PLUGIN
+npm install -D alpinejs-pages
 ```
 
 ```js
 import Alpine from 'alpinejs'
-import FILE from 'PLUGIN'
+import pages from 'alpinejs-pages'
 
-Alpine.plugin(FILE)
+Alpine.plugin(pages)
 
 Alpine.start()
 ```
@@ -87,7 +87,7 @@ Examples of how the plugin works.
 
 ## Stats
 
-![](https://img.shields.io/bundlephobia/min/PLUGIN)
-![](https://img.shields.io/npm/v/PLUGIN)
-![](https://img.shields.io/npm/dt/PLUGIN)
-![](https://img.shields.io/github/license/markmead/PLUGIN)
+![](https://img.shields.io/bundlephobia/min/alpinejs-pages)
+![](https://img.shields.io/npm/v/alpinejs-pages)
+![](https://img.shields.io/npm/dt/alpinejs-pages)
+![](https://img.shields.io/github/license/markmead/alpinejs-pages)
