@@ -1,65 +1,16 @@
-**--- DELETE START ---**
-
-# Alpine JS Plugin Template
-
-This is a template repository to help developers quickly build Alpine JS
-plugins.
-
-## How to Use
-
-1. Clone the repository with the "Use this template" button on GitHub
-2. Run `npm install` to install ES Build
-3. Build your plugin
-
-### Compiling
-
-To compile the code you run `npm run build` which will create two files in the
-`/dist` directory.
-
-### Testing
-
-In this template you will find a `index.html` file that you can use for testing
-how the Alpine JS plugin works.
-
-I recommend using [vercel/serve](https://www.npmjs.com/package/serve) to serve
-this file.
-
-## Things to Change
-
-- Find and replace "alpinejs-pages" with the name of your plugin
-- Find and replace "pages" with the name of your compiled file
-- Find and replace "DESCRIPTION" with a description of your plugin
-- Uncomment "index.html" in the `.gitignore` file
-
-🚨 Make sure find and replace is case sensitive
-
-If you were creating a plugin called "Alpine JS CSV" you could do the following:
-
-- "alpinejs-pages" to "alpinejs-csv"
-- "pages" to "csv"
-- "DESCRIPTION" to "Transform data into a CSV with Alpine JS 📈"
-
----
-
-### License
-
-The choice of adding a license and what license is best for your project is up
-to you.
-
-[Adding a License on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository)
-
-**--- DELETE END ---**
-
 # Alpine Pages
 
-Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by creating localized Alpine data for your page and allowing you to use it in more freeform ways while still preserving full reactivity. Alpine Pages also features automatic routing for your pages out of the box with support for both history-based and hash-based routing.
+Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by allowing you to make fully reactive html inside your Alpine.data,allowing you to use alpine in more freeform ways and preventing clutter in your html documents.
 
 ## Install
 
 ### With a CDN
 
 ```html
-<script defer src="https://unpkg.com/alpinejs-pages@latest/dist/pages.min.js"></script>
+<script
+  defer
+  src="https://unpkg.com/alpinejs-pages@latest/dist/pages.min.js"
+></script>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 ```
@@ -73,17 +24,35 @@ npm install -D alpinejs-pages
 ```
 
 ```js
-import Alpine from 'alpinejs'
-import pages from 'alpinejs-pages'
+import Alpine from "alpinejs";
+import pages from "alpinejs-pages";
 
-Alpine.plugin(pages)
+Alpine.plugin(pages);
 
-Alpine.start()
+Alpine.start();
 ```
 
 ## Example
 
-Examples of how the plugin works.
+To create a page, just add a page function to an Alpine.data. This function needs to return a string of html that will make up your page. The alpine-js page plugin automatically handles reactivity for embedding format strings. That way if any member of your data updates the page will update with it.
+
+```js
+Alpine.data("home", () => ({
+  message: "hello",
+  page() {
+    return `<h2>${this.message}</h2>`;
+  },
+}));
+```
+
+In the HTML you first need to add your data to the scope. Then if you want to add any html that isnt in your page put that in first. Then to render the page just attach the x-page property to an html tag and it will fill in the inner html with your page. Since the page functions as a sort of template you can also make multiple instances of the page if you want by attaching the x-page attribute to multiple html tags within your data scope.
+
+```html
+<div x-data="home">
+  <button @click="message = 'goodbye'">goodbye</button>
+  <div x-page></div>
+</div>
+```
 
 ## Stats
 

@@ -1,1 +1,1 @@
-function i(e){e.directive("[name]",(t,{value:a,modifiers:f,expression:l},{Alpine:n,effect:o,cleanup:r})=>{}),e.magic("[name]",(t,{Alpine:a})=>{})}var c=i;export{c as default};
+function o(t){t.magic("page",e=>{let a=t.$data(e);if(!a||typeof a.page!="function")throw new Error("Alpine data must have a 'page' function");return a.page}),t.directive("page",e=>{let a=t.$data(e);if(!a||typeof a.page!="function")throw new Error("Alpine data must have a 'page' function");t.effect(()=>{e.innerHTML=a.page()})})}var f=o;export{f as default};
