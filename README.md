@@ -59,4 +59,4 @@ In the HTML you first need to add your data to the scope. Then if you want to ad
 ![](https://img.shields.io/bundlephobia/min/alpinejs-pages)
 ![](https://img.shields.io/npm/v/alpinejs-pages)
 ![](https://img.shields.io/npm/dt/alpinejs-pages)
-![](https://img.shields.io/github/license/markmead/alpinejs-pages)
+![](https://img.shields.io/github/license/BanceDev/alpinejs-pages)
