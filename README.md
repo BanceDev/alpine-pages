@@ -1,5 +1,10 @@
 # Alpine Pages
 
+![](https://img.shields.io/bundlephobia/min/alpinejs-pages)
+![](https://img.shields.io/npm/v/alpinejs-pages)
+![](https://img.shields.io/npm/dt/alpinejs-pages)
+![](https://img.shields.io/github/license/BanceDev/alpine-pages)
+
 Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by allowing you to make fully reactive html inside your Alpine.data,allowing you to use alpine in more freeform ways and preventing clutter in your html documents.
 
 ## Install
@@ -53,10 +58,3 @@ In the HTML you first need to add your data to the scope. Then if you want to ad
   <div x-page></div>
 </div>
 ```
-
-## Stats
-
-![](https://img.shields.io/bundlephobia/min/alpinejs-pages)
-![](https://img.shields.io/npm/v/alpinejs-pages)
-![](https://img.shields.io/npm/dt/alpinejs-pages)
-![](https://img.shields.io/github/license/BanceDev/alpine-pages)
