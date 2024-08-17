@@ -5,7 +5,7 @@
 ![](https://img.shields.io/npm/dt/alpinejs-pages)
 ![](https://img.shields.io/github/license/BanceDev/alpine-pages)
 
-Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by allowing you to make fully reactive html inside your Alpine.data,allowing you to use alpine in more freeform ways and preventing clutter in your html documents.
+Alpine Pages is a plugin desinged to make it simpler to make multiple "pages" for your Alpine SPA. This is achieved by allowing you to make fully reactive html inside your Alpine.data, enabling you to use alpine in more freeform ways and preventing clutter in your html documents.
 
 ## Install
 
@@ -39,7 +39,7 @@ Alpine.start();
 
 ## Example
 
-To create a page, just add a page function to an Alpine.data. This function needs to return a string of html that will make up your page. The alpine-js page plugin automatically handles reactivity for embedding format strings. That way if any member of your data updates the page will update with it.
+To create a page, just add a page function to an Alpine.data. This function needs to return a string of html that will make up your page. The plugin automatically handles reactivity for embedding format strings. That way if any member of your data updates the page will update with it.
 
 ```js
 Alpine.data("home", () => ({
@@ -50,7 +50,7 @@ Alpine.data("home", () => ({
 }));
 ```
 
-In the HTML you first need to add your data to the scope. Then if you want to add any html that isnt in your page put that in first. Then to render the page just attach the x-page property to an html tag and it will fill in the inner html with your page. Since the page functions as a sort of template you can also make multiple instances of the page if you want by attaching the x-page attribute to multiple html tags within your data scope.
+In the HTML you first need to add your data to the scope. Then to render the page just attach the x-page property to an html tag and it will fill in the inner html with your page. Since the page functions as a sort of template you can also make multiple instances of the page if you want by attaching the x-page attribute to multiple html tags within your data scope.
 
 ```html
 <div x-data="home">
