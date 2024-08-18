@@ -1,9 +1,11 @@
 export default function (Alpine) {
-  
+  let idCounter = 0;
+
   Alpine.directive('page', (el) => {
     const data = Alpine.$data(el);
     // this could be better but it works for now
-    const uniqueScopeId = 'scope-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+    const uniqueScopeId = 'scope-' + Date.now() + '-' + idCounter;
+    idCounter++;
 
     if (!data || typeof data.page !== 'function') {
       throw new Error(`Alpine data must have a 'page' function`);
@@ -20,7 +22,7 @@ export default function (Alpine) {
         `;
       });
     }
-    
+
     // Set up reactive effect to update visibility
     Alpine.effect(() => {
       el.innerHTML += `
@@ -30,7 +32,7 @@ export default function (Alpine) {
       `;
     });
 
-  
+
   });
 
 }
