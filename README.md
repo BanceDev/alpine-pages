@@ -49,7 +49,7 @@ document.addEventListener("alpine:init", () => {
     styles() {
       return `
         h2 {
-          color: ${this.red};
+          color: ${this.color};
         }
       `;
     },

@@ -1,6 +1,6 @@
 {
   "name": "alpinejs-pages",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Alpine.js plugin for cleanly making multiple client side pages with automatic routing",
   "repository": {
   "type": "git",
